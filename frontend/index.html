@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodCaster - Transform Text to Engaging Podcasts</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M12 1v22M5 8h14M5 16h14%22></path></svg>" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="home-container">
+        <nav class="navbar">
+            <div class="logo">PodCaster</div>
+        </nav>
+        
+        <main class="hero">
+            <h1 class="hero-title">Transform Text into<br>Engaging Podcasts</h1>
+            <div class="hero-description">
+                <p>Turn any text into dynamic podcast conversations with AI-powered technology. Perfect for articles, blogs, scripts, or any written content.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>Natural Conversations</h3>
+                    <p>Convert text into natural-sounding dialogues</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick Generation</h3>
+                    <p>Get your podcast ready in minutes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Customizable</h3>
+                    <p>Choose tone, length, and discussion style</p>
+                </div>
+            </div>
+
+            <a href="generator.html" class="cta-button">
+                Get Started
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+
+            <p></p>
+            <button class="api-button" id="apiConfigBtn">
+                <span class="button-text">Configure API Keys</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+            </button>
+        </main>
+
+        <!-- API Configuration Modal -->
+        <div class="api-modal" id="apiModal">
+            <div class="api-modal-content">
+                <div class="api-modal-header">
+                    <h2>API Configuration</h2>
+                    <button class="api-modal-close" id="closeApiModal">&times;</button>
+                </div>
+                <div class="api-modal-body">
+                    <form id="apiConfigForm">
+                        <div class="api-input-group">
+                            <label for="genaiApiKey">Google GenAI API Key</label>
+                            <a href="https://aistudio.google.com/app/apikey" target="_blank" class="api-link" style="color: #f0f0f0; text-decoration: underline;">Access your free Google GenAI API key here</a>
+                            <div class="input-wrapper">
+                                <input type="password" id="genaiApiKey" name="genaiApiKey" placeholder="Enter your Google GenAI API key" required>
+                                <button type="button" class="toggle-password" data-target="genaiApiKey">
+                                    <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="api-input-group">
+                            <label for="segmindApiKey">Segmind API Key</label>
+                            <a href="https://cloud.segmind.com/console/api-keys" target="_blank" class="api-link" style="color: #f0f0f0; text-decoration: underline;">Retrieve your complimentary Segmind API key here</a>
+                            <div class="input-wrapper">
+                                <input type="password" id="segmindApiKey" name="segmindApiKey" placeholder="Enter your Segmind API key" required>
+                                <button type="button" class="toggle-password" data-target="segmindApiKey">
+                                    <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="api-modal-footer">
+                            <button type="submit" class="save-api-btn" id="saveApiKeys">Save API Keys</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

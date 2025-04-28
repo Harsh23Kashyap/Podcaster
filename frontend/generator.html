@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PodCaster - Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">PodCaster</a>
+        </nav>
+
+        <h1>Create Your Podcast</h1>
+        <div class="input-container">
+            <textarea id="contentInput" placeholder="Type or paste your content here... We'll transform it into an engaging podcast discussion."></textarea>
+        </div>
+        
+        <button id="advancedBtn" class="advanced-btn">
+            <div class="advanced-btn-content">
+                <span>Advanced Options</span>
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </button>
+        
+        <div id="advancedOptions" class="advanced-options">
+            <div class="options-grid">
+                <div class="option-group">
+                    <label for="discussionType">
+                        <div class="label-icon">💭</div>
+                        Discussion Type
+                    </label>
+                    <select id="discussionType">
+                        <option value="basic">Basic Conversation</option>
+                        <option value="advanced">Advanced Analysis</option>
+                        <option value="expert">Expert Deep Dive</option>
+                    </select>
+                    <div class="option-description">Choose how in-depth the discussion should be</div>
+                </div>
+                
+                <div class="option-group">
+                    <label for="tone">
+                        <div class="label-icon">🎭</div>
+                        Conversation Tone
+                    </label>
+                    <select id="tone">
+                        <option value="serious">Serious & Professional</option>
+                        <option value="funny">Light & Humorous</option>
+                        <option value="casual">Casual & Friendly</option>
+                        <option value="professional">Business Professional</option>
+                    </select>
+                    <div class="option-description">Set the mood and style of the conversation</div>
+                </div>
+                
+                <div class="option-group">
+                    <label for="length">
+                        <div class="label-icon">⏱️</div>
+                        Discussion Length
+                    </label>
+                    <select id="length">
+                        <option value="1">1 minute - Shortest Sync</option>
+                        <option value="2">2 minutes - Quick Brief</option>
+                        <option value="5">5 minutes - Short Discussion</option>
+                        <option value="10">10 minutes - Detailed Talk</option>
+                        <option value="15">15 minutes - In-depth Analysis</option>
+                    </select>
+                    <div class="option-description">Select the duration of your podcast</div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="generateBtn" class="generate-btn">
+            <span class="btn-content">
+                <svg class="microphone-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+                Generate Podcast
+            </span>
+        </button>
+    </div>
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-header">
+                <div class="loading-logo">PodCaster</div>
+                <div class="loading-title">Creating Your Podcast</div>
+            </div>
+            <div class="loading-body">
+                <div class="loading-spinner-container">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-spinner-ring"></div>
+                </div>
+                <div class="loading-message"></div>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Processing...</div>
+                </div>
+            </div>
+            <div class="loading-footer">
+                <div class="loading-tip">Tip: The more detailed your input, the better the podcast!</div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
